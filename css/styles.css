@@ -43,8 +43,9 @@ nav>ul>li a {
 /*Side Menu*/
 
 .mainContent ul{
-    padding-inline-start: 2px;
-    margin-right: 1.5rem;
+    padding-inline-start: 0px;
+    margin-right: 0;
+    padding: .7rem;
 }
 
 .mainContent ul>a>li{
@@ -67,23 +68,57 @@ nav>ul>li a {
 }
 
 .mainContent{
-    width:1000px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.leftmenu {
-    float: left;
-    width: 30%;
-    margin-bottom: 20px;
+.pieGallery {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
+
+.leftMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pieCard {
+    display: flex;
+    flex-direction: column;
+    margin: .4rem;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    padding: .4rem;
+}
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pieCard > h5, .pieCard > p {
+margin: 0.2rem;
+
+}
+
+.cardRow > h5, .pieCard > p {
+    margin: 0.2rem;
 
 /*Main Content*/
 
-.main {
-    float: right;
-    width: 70%;
-    margin-bottom: 20px;
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    margin: 5px 10px;
 }
 
 .pageTitle{
@@ -91,8 +126,30 @@ nav>ul>li a {
     color:#a593c2;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.pieRow {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 /*Footer*/
 footer {
-    clear: both;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+footer > p, footer > address {
+    margin: .5rem 0;
+
 }
