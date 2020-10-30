@@ -16,7 +16,7 @@ body {
 
 nav {
     height: 60px;
-    width: 1000px;
+    width: 80%;
     margin: 0 auto 20px;
 }
 
@@ -25,10 +25,14 @@ nav>ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
 }
 
-nav>ul>li {
-    float: left;
+nav>ul>li:nth-child(1){
+    flex-grow: 2;
 }
 
 nav>ul>li a {
@@ -39,6 +43,7 @@ nav>ul>li a {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 /*Side Menu*/
 
@@ -73,12 +78,13 @@ nav>ul>li a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pieGallery {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    flex-basis: 60%;
     flex-wrap: wrap;
     align-content: flex-start;
 }
@@ -87,16 +93,25 @@ nav>ul>li a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .pieCard {
     display: flex;
     flex-direction: column;
     margin: .4rem;
-    align-items: center;
+    align-items:left;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
     padding: .4rem;
+    flex-grow: 2;
 }
+.pieCard > img {
+    align-self: center;
+}
+ .pieCard:nth-child(1) {
+    flex-basis: 100%;
+ }
+
 .cardRow {
     display: flex;
     flex-direction: row;
@@ -111,6 +126,25 @@ margin: 0.2rem;
 
 .cardRow > h5, .pieCard > p {
     margin: 0.2rem;
+}
+
+.pieCard > img {
+    width: 40%;
+    height: auto;
+}
+
+#promos {
+    align-self: center;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    border-radius: 20px;
+}
+
+#promos >h3 {
+    margin: 5px;
+}
+
 
 /*Main Content*/
 
@@ -121,6 +155,10 @@ margin: 0.2rem;
     margin: 5px 10px;
 }
 
+.box:nth-child(1){
+    order: 15;
+}
+
 .pageTitle{
     font-size:35px;
     color:#a593c2;
@@ -129,16 +167,46 @@ margin: 0.2rem;
 .main {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    flex-basis: 60%;
 }
 
 .pieRow {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    padding-right: .5rem;
+}
+
+.pieRow > div {
+    flex-grow: 2;
+    padding-left: .5rem;
+}
+
+.pieRow h5, .pieRow p {
+    margin:0;
+}
+
+.pieRow > small {
+    flex-shrink: 3;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /*Footer*/
@@ -153,3 +221,15 @@ footer > p, footer > address {
     margin: .5rem 0;
 
 }
+
+
+@media screen and (max-width: 600px){
+    .leftMenu{
+        order:1;
+    }
+    .main, .pieGallery{
+        flex-basis: 90%!important;
+    }
+    
+}
+
